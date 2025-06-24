@@ -10,14 +10,14 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
         }
-        
+
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -25,231 +25,168 @@
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            backdrop-filter: blur(10px);
         }
-        
+
         .header {
-            background: linear-gradient(135deg, #2c3e50, #34495e);
+            background: linear-gradient(45deg, #2c3e50, #3498db);
             color: white;
             padding: 30px;
             text-align: center;
         }
-        
+
         .header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        
+
         .header p {
-            font-size: 1.2em;
+            font-size: 1.1em;
             opacity: 0.9;
         }
-        
+
         .exam-content {
-            padding: 40px;
+            padding: 30px;
         }
-        
+
         .question {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            background: #f8f9fa;
             border-left: 5px solid #3498db;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
-        
+
         .question:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
-        
+
         .question h3 {
             color: #2c3e50;
             margin-bottom: 15px;
-            font-size: 1.3em;
+            font-size: 1.2em;
         }
-        
+
         .options {
-            display: flex;
-            flex-direction: column;
+            display: grid;
             gap: 10px;
         }
-        
+
         .option {
             display: flex;
             align-items: center;
             padding: 12px;
+            background: white;
             border-radius: 8px;
-            transition: background-color 0.3s ease;
+            border: 2px solid #e9ecef;
             cursor: pointer;
+            transition: all 0.3s ease;
         }
-        
+
         .option:hover {
-            background: #f8f9fa;
+            border-color: #3498db;
+            background: #f0f8ff;
         }
-        
+
         .option input[type="radio"] {
             margin-right: 12px;
             transform: scale(1.2);
-            accent-color: #3498db;
         }
-        
+
         .option label {
             cursor: pointer;
-            flex: 1;
-            font-size: 1.1em;
+            flex-grow: 1;
         }
-        
+
         .submit-btn {
-            display: block;
-            width: 100%;
-            max-width: 300px;
-            margin: 30px auto;
-            padding: 15px 30px;
-            background: linear-gradient(135deg, #3498db, #2980b9);
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
             color: white;
             border: none;
+            padding: 15px 40px;
+            font-size: 1.1em;
             border-radius: 50px;
-            font-size: 1.2em;
-            font-weight: bold;
             cursor: pointer;
+            display: block;
+            margin: 30px auto;
+            box-shadow: 0 10px 20px rgba(39, 174, 96, 0.3);
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
         }
-        
+
         .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(39, 174, 96, 0.4);
         }
-        
-        .submit-btn:active {
-            transform: translateY(0);
-        }
-        
+
         .results {
             display: none;
-            background: linear-gradient(135deg, #27ae60, #2ecc71);
-            color: white;
+            background: #fff;
             padding: 30px;
             border-radius: 15px;
-            text-align: center;
-            margin-top: 30px;
-            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.3);
-        }
-        
-        .results h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        
-        .score-details {
-            display: flex;
-            justify-content: space-around;
-            margin: 20px 0;
-            flex-wrap: wrap;
-        }
-        
-        .score-item {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 15px 25px;
-            border-radius: 10px;
-            margin: 10px;
-            backdrop-filter: blur(10px);
-        }
-        
-        .score-item h3 {
-            font-size: 2em;
-            margin-bottom: 5px;
-        }
-        
-        .retry-btn {
             margin-top: 20px;
-            padding: 12px 25px;
-            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .score {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .score.good {
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
             color: white;
-            border: 2px solid white;
+        }
+
+        .score.average {
+            background: linear-gradient(45deg, #f39c12, #e67e22);
+            color: white;
+        }
+
+        .score.poor {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+        }
+
+        .wrong-answers {
+            margin-top: 20px;
+        }
+
+        .wrong-answer {
+            background: #ffe6e6;
+            border-left: 5px solid #e74c3c;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .wrong-answer h4 {
+            color: #c0392b;
+            margin-bottom: 10px;
+        }
+
+        .correct-answer {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .retry-btn {
+            background: linear-gradient(45deg, #8e44ad, #9b59b6);
+            color: white;
+            border: none;
+            padding: 12px 30px;
             border-radius: 25px;
             cursor: pointer;
-            font-size: 1.1em;
+            margin-top: 20px;
             transition: all 0.3s ease;
         }
-        
+
         .retry-btn:hover {
-            background: white;
-            color: #27ae60;
-        }
-        
-        .wrong-answers {
-            background: rgba(231, 76, 60, 0.1);
-            border: 2px solid rgba(231, 76, 60, 0.3);
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px 0;
-            text-align: left;
-        }
-        
-        .wrong-answers h3 {
-            color: #e74c3c;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        
-        .wrong-item {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 10px;
-            border-left: 4px solid #e74c3c;
-        }
-        
-        .wrong-item .question-text {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 8px;
-        }
-        
-        .wrong-item .answer-info {
-            font-size: 0.9em;
-        }
-        
-        .wrong-item .your-answer {
-            color: #e74c3c;
-            font-weight: bold;
-        }
-        
-        .wrong-item .correct-answer {
-            color: #27ae60;
-            font-weight: bold;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                margin: 10px;
-                border-radius: 15px;
-            }
-            
-            .header {
-                padding: 20px;
-            }
-            
-            .header h1 {
-                font-size: 2em;
-            }
-            
-            .exam-content {
-                padding: 20px;
-            }
-            
-            .question {
-                padding: 20px;
-            }
-            
-            .score-details {
-                flex-direction: column;
-                align-items: center;
-            }
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(142, 68, 173, 0.3);
         }
     </style>
 </head>
@@ -257,621 +194,397 @@
     <div class="container">
         <div class="header">
             <h1>🤖 Examen de Robótica y Arduino</h1>
-            <p>Evaluación sobre conceptos fundamentales</p>
+            <p>Pon a prueba tus conocimientos sobre robótica, Arduino y programación</p>
         </div>
-        
+
         <div class="exam-content">
             <form id="examForm">
-                <!-- Pregunta 1 -->
-                <div class="question">
-                    <h3>1. ¿Cuál es una característica clave de los robots?</h3>
-                    <div class="options">
-                        <div class="option">
-                            <input type="radio" name="q1" value="a" id="q1a">
-                            <label for="q1a">Solo pueden ser controlados manualmente</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q1" value="b" id="q1b">
-                            <label for="q1b">Autonomía para tomar decisiones sin intervención humana constante</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q1" value="c" id="q1c">
-                            <label for="q1c">No pueden interactuar con su entorno</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q1" value="d" id="q1d">
-                            <label for="q1d">Son siempre del mismo tamaño</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pregunta 2 -->
-                <div class="question">
-                    <h3>2. ¿Cuál es la Primera Ley de la Robótica de Asimov?</h3>
-                    <div class="options">
-                        <div class="option">
-                            <input type="radio" name="q2" value="a" id="q2a">
-                            <label for="q2a">Un robot debe proteger su propia existencia</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q2" value="b" id="q2b">
-                            <label for="q2b">Un robot no debe dañar a un ser humano ni permitir que sufra daño por inacción</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q2" value="c" id="q2c">
-                            <label for="q2c">Un robot debe obedecer las órdenes de los humanos</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q2" value="d" id="q2d">
-                            <label for="q2d">Un robot debe ser eficiente en sus tareas</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pregunta 3 -->
-                <div class="question">
-                    <h3>3. ¿Qué componente del robot actúa como sus "sentidos"?</h3>
-                    <div class="options">
-                        <div class="option">
-                            <input type="radio" name="q3" value="a" id="q3a">
-                            <label for="q3a">Actuadores</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q3" value="b" id="q3b">
-                            <label for="q3b">Controladores</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q3" value="c" id="q3c">
-                            <label for="q3c">Sensores</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q3" value="d" id="q3d">
-                            <label for="q3d">Motores</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pregunta 4 -->
-                <div class="question">
-                    <h3>4. ¿En qué año nació Arduino?</h3>
-                    <div class="options">
-                        <div class="option">
-                            <input type="radio" name="q4" value="a" id="q4a">
-                            <label for="q4a">2003</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q4" value="b" id="q4b">
-                            <label for="q4b">2005</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q4" value="c" id="q4c">
-                            <label for="q4c">2007</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q4" value="d" id="q4d">
-                            <label for="q4d">2009</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pregunta 5 -->
-                <div class="question">
-                    <h3>5. ¿Cuáles son las dos funciones principales de todo programa de Arduino?</h3>
-                    <div class="options">
-                        <div class="option">
-                            <input type="radio" name="q5" value="a" id="q5a">
-                            <label for="q5a">start() y end()</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q5" value="b" id="q5b">
-                            <label for="q5b">setup() y void loop()</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q5" value="c" id="q5c">
-                            <label for="q5c">begin() y finish()</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q5" value="d" id="q5d">
-                            <label for="q5d">init() y run()</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pregunta 6 -->
-                <div class="question">
-                    <h3>6. ¿Qué función se usa para configurar un pin como salida en Arduino?</h3>
-                    <div class="options">
-                        <div class="option">
-                            <input type="radio" name="q6" value="a" id="q6a">
-                            <label for="q6a">digitalWrite(pin, OUTPUT)</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q6" value="b" id="q6b">
-                            <label for="q6b">pinMode(pin, OUTPUT)</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q6" value="c" id="q6c">
-                            <label for="q6c">setPin(pin, OUTPUT)</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q6" value="d" id="q6d">
-                            <label for="q6d">configPin(pin, OUTPUT)</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pregunta 7 -->
-                <div class="question">
-                    <h3>7. ¿Qué rango de valores devuelve analogRead() en Arduino?</h3>
-                    <div class="options">
-                        <div class="option">
-                            <input type="radio" name="q7" value="a" id="q7a">
-                            <label for="q7a">0 a 255</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q7" value="b" id="q7b">
-                            <label for="q7b">0 a 1023</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q7" value="c" id="q7c">
-                            <label for="q7c">0 a 512</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q7" value="d" id="q7d">
-                            <label for="q7d">0 a 100</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pregunta 8 -->
-                <div class="question">
-                    <h3>8. ¿Para qué se usa la función delay() en Arduino?</h3>
-                    <div class="options">
-                        <div class="option">
-                            <input type="radio" name="q8" value="a" id="q8a">
-                            <label for="q8a">Para acelerar el programa</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q8" value="b" id="q8b">
-                            <label for="q8b">Para detener el programa durante un tiempo específico</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q8" value="c" id="q8c">
-                            <label for="q8c">Para reiniciar el programa</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q8" value="d" id="q8d">
-                            <label for="q8d">Para cambiar la velocidad del procesador</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pregunta 9 -->
-                <div class="question">
-                    <h3>9. ¿Cuál es una de las principales ventajas de Arduino?</h3>
-                    <div class="options">
-                        <div class="option">
-                            <input type="radio" name="q9" value="a" id="q9a">
-                            <label for="q9a">Es muy caro y exclusivo</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q9" value="b" id="q9b">
-                            <label for="q9b">Solo pueden usarlo ingenieros especializados</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q9" value="c" id="q9c">
-                            <label for="q9c">Es económico y de código abierto</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q9" value="d" id="q9d">
-                            <label for="q9d">No tiene documentación disponible</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pregunta 10 -->
-                <div class="question">
-                    <h3>10. ¿Qué modelo de Arduino se considera el más icónico y duradero?</h3>
-                    <div class="options">
-                        <div class="option">
-                            <input type="radio" name="q10" value="a" id="q10a">
-                            <label for="q10a">Arduino Diecimila</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q10" value="b" id="q10b">
-                            <label for="q10b">Arduino Due</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q10" value="c" id="q10c">
-                            <label for="q10c">Arduino Uno</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q10" value="d" id="q10d">
-                            <label for="q10d">Arduino Yún</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pregunta 11 -->
-                <div class="question">
-                    <h3>11. ¿Cuál es la velocidad estándar para la comunicación serial en Arduino?</h3>
-                    <div class="options">
-                        <div class="option">
-                            <input type="radio" name="q11" value="a" id="q11a">
-                            <label for="q11a">4800 baudios</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q11" value="b" id="q11b">
-                            <label for="q11b">9600 baudios</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q11" value="c" id="q11c">
-                            <label for="q11c">19200 baudios</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q11" value="d" id="q11d">
-                            <label for="q11d">115200 baudios</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pregunta 12 -->
-                <div class="question">
-                    <h3>12. ¿Qué disciplinas combina la robótica?</h3>
-                    <div class="options">
-                        <div class="option">
-                            <input type="radio" name="q12" value="a" id="q12a">
-                            <label for="q12a">Solo ingeniería mecánica</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q12" value="b" id="q12b">
-                            <label for="q12b">Ingeniería mecánica, eléctrica, ciencias de la computación e IA</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q12" value="c" id="q12c">
-                            <label for="q12c">Solo programación</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q12" value="d" id="q12d">
-                            <label for="q12d">Solo electrónica</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pregunta 13 -->
-                <div class="question">
-                    <h3>13. ¿Cuál es la diferencia entre print() y println() en Arduino?</h3>
-                    <div class="options">
-                        <div class="option">
-                            <input type="radio" name="q13" value="a" id="q13a">
-                            <label for="q13a">No hay diferencia</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q13" value="b" id="q13b">
-                            <label for="q13b">print() escribe sin salto de línea, println() escribe y pasa a la siguiente línea</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q13" value="c" id="q13c">
-                            <label for="q13c">println() es más rápido</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q13" value="d" id="q13d">
-                            <label for="q13d">print() solo funciona con números</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pregunta 14 -->
-                <div class="question">
-                    <h3>14. ¿En qué ciudad de Italia se fundó Arduino?</h3>
-                    <div class="options">
-                        <div class="option">
-                            <input type="radio" name="q14" value="a" id="q14a">
-                            <label for="q14a">Roma</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q14" value="b" id="q14b">
-                            <label for="q14b">Milán</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q14" value="c" id="q14c">
-                            <label for="q14c">Ivrea</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q14" value="d" id="q14d">
-                            <label for="q14d">Florencia</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pregunta 15 -->
-                <div class="question">
-                    <h3>15. ¿Cuál es una limitación principal de la función delay() en Arduino?</h3>
-                    <div class="options">
-                        <div class="option">
-                            <input type="radio" name="q15" value="a" id="q15a">
-                            <label for="q15a">Es muy rápida</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q15" value="b" id="q15b">
-                            <label for="q15b">Durante un delay, Arduino no puede hacer otra cosa</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q15" value="c" id="q15c">
-                            <label for="q15c">Solo funciona con LEDs</label>
-                        </div>
-                        <div class="option">
-                            <input type="radio" name="q15" value="d" id="q15d">
-                            <label for="q15d">Consume mucha memoria</label>
-                        </div>
-                    </div>
-                </div>
-
-                <button type="submit" class="submit-btn">📝 Enviar Examen</button>
+                <div id="questionsContainer"></div>
+                <button type="submit" class="submit-btn">📊 Enviar Examen</button>
             </form>
 
             <div id="results" class="results">
-                <h2>🎉 Resultados del Examen</h2>
-                <div class="score-details">
-                    <div class="score-item">
-                        <h3 id="correctCount">0</h3>
-                        <p>Respuestas Correctas</p>
-                    </div>
-                    <div class="score-item">
-                        <h3 id="incorrectCount">0</h3>
-                        <p>Respuestas Incorrectas</p>
-                    </div>
-                    <div class="score-item">
-                        <h3 id="percentage">0%</h3>
-                        <p>Porcentaje</p>
-                    </div>
-                </div>
-                <p id="message"></p>
-                
-                <div id="wrongAnswers" class="wrong-answers">
-                    <h3>❌ Respuestas Incorrectas:</h3>
-                    <div id="wrongAnswersList"></div>
-                </div>
-                
-                <button class="retry-btn" onclick="retryExam()">🔄 Intentar de Nuevo</button>
+                <div id="scoreDisplay" class="score"></div>
+                <div id="wrongAnswers" class="wrong-answers"></div>
+                <button id="retryBtn" class="retry-btn">🔄 Nuevo Examen</button>
             </div>
         </div>
     </div>
 
     <script>
-        // Respuestas correctas
-        const correctAnswers = {
-            q1: 'b', // Autonomía
-            q2: 'b', // Primera Ley de Asimov
-            q3: 'c', // Sensores
-            q4: 'b', // Arduino nació en 2005
-            q5: 'b', // setup() y void loop()
-            q6: 'b', // pinMode(pin, OUTPUT)
-            q7: 'b', // 0 a 1023
-            q8: 'b', // delay() detiene el programa
-            q9: 'c', // Arduino es económico y código abierto
-            q10: 'c', // Arduino Uno
-            q11: 'b', // 9600 baudios
-            q12: 'b', // Robótica combina múltiples disciplinas
-            q13: 'b', // Diferencia entre print() y println()
-            q14: 'c', // Arduino nació en Ivrea
-            q15: 'b'  // Limitación de delay()
-        };
-
-        // Textos de las preguntas para mostrar en resultados
-        const questionTexts = {
-            q1: "¿Cuál es una característica clave de los robots?",
-            q2: "¿Cuál es la Primera Ley de la Robótica de Asimov?",
-            q3: "¿Qué componente del robot actúa como sus 'sentidos'?",
-            q4: "¿En qué año nació Arduino?",
-            q5: "¿Cuáles son las dos funciones principales de todo programa de Arduino?",
-            q6: "¿Qué función se usa para configurar un pin como salida en Arduino?",
-            q7: "¿Qué rango de valores devuelve analogRead() en Arduino?",
-            q8: "¿Para qué se usa la función delay() en Arduino?",
-            q9: "¿Cuál es una de las principales ventajas de Arduino?",
-            q10: "¿Qué modelo de Arduino se considera el más icónico y duradero?",
-            q11: "¿Cuál es la velocidad estándar para la comunicación serial en Arduino?",
-            q12: "¿Qué disciplinas combina la robótica?",
-            q13: "¿Cuál es la diferencia entre print() y println() en Arduino?",
-            q14: "¿En qué ciudad de Italia se fundó Arduino?",
-            q15: "¿Cuál es una limitación principal de la función delay() en Arduino?"
-        };
-
-        // Opciones de respuesta
-        const answerOptions = {
-            q1: {
-                a: "Solo pueden ser controlados manualmente",
-                b: "Autonomía para tomar decisiones sin intervención humana constante",
-                c: "No pueden interactuar con su entorno",
-                d: "Son siempre del mismo tamaño"
+        const questionBank = [
+            {
+                question: "¿Qué es un robot según la definición del documento?",
+                options: [
+                    "Una máquina que solo puede realizar tareas físicas",
+                    "Una máquina programable capaz de realizar tareas físicas o virtuales de forma autónoma o semiautónoma",
+                    "Un dispositivo que solo imita acciones humanas",
+                    "Una computadora con brazos mecánicos"
+                ],
+                correct: 1
             },
-            q2: {
-                a: "Un robot debe proteger su propia existencia",
-                b: "Un robot no debe dañar a un ser humano ni permitir que sufra daño por inacción",
-                c: "Un robot debe obedecer las órdenes de los humanos",
-                d: "Un robot debe ser eficiente en sus tareas"
+            {
+                question: "¿Cuál es la Primera Ley de la Robótica de Asimov?",
+                options: [
+                    "Un robot debe obedecer las órdenes de los humanos",
+                    "Un robot debe proteger su propia existencia",
+                    "Un robot no debe dañar a un ser humano ni, por inacción, permitir que un ser humano sufra daño",
+                    "Un robot debe ser programable"
+                ],
+                correct: 2
             },
-            q3: {
-                a: "Actuadores",
-                b: "Controladores",
-                c: "Sensores",
-                d: "Motores"
+            {
+                question: "¿Cuáles son los tres componentes esenciales de todo robot funcional?",
+                options: [
+                    "Motores, cables y baterías",
+                    "Hardware, software y firmware",
+                    "Sensores, actuadores y controladores",
+                    "Cámaras, micrófonos y altavoces"
+                ],
+                correct: 2
             },
-            q4: {
-                a: "2003",
-                b: "2005",
-                c: "2007",
-                d: "2009"
+            {
+                question: "¿En qué año y dónde nació Arduino?",
+                options: [
+                    "2004 en España",
+                    "2005 en Italia",
+                    "2006 en Estados Unidos",
+                    "2005 en Francia"
+                ],
+                correct: 1
             },
-            q5: {
-                a: "start() y end()",
-                b: "setup() y void loop()",
-                c: "begin() y finish()",
-                d: "init() y run()"
+            {
+                question: "¿Cuál es la función de los sensores en un robot?",
+                options: [
+                    "Convertir señales eléctricas en movimiento",
+                    "Procesar información",
+                    "Permitir al robot percibir su entorno",
+                    "Almacenar datos"
+                ],
+                correct: 2
             },
-            q6: {
-                a: "digitalWrite(pin, OUTPUT)",
-                b: "pinMode(pin, OUTPUT)",
-                c: "setPin(pin, OUTPUT)",
-                d: "configPin(pin, OUTPUT)"
+            {
+                question: "¿Qué función ejecuta Arduino automáticamente de forma continua?",
+                options: [
+                    "setup()",
+                    "void loop()",
+                    "main()",
+                    "begin()"
+                ],
+                correct: 1
             },
-            q7: {
-                a: "0 a 255",
-                b: "0 a 1023",
-                c: "0 a 512",
-                d: "0 a 100"
+            {
+                question: "¿Cuál es la velocidad estándar de comunicación serial en Arduino?",
+                options: [
+                    "115200 baudios",
+                    "9600 baudios",
+                    "57600 baudios",
+                    "4800 baudios"
+                ],
+                correct: 1
             },
-            q8: {
-                a: "Para acelerar el programa",
-                b: "Para detener el programa durante un tiempo específico",
-                c: "Para reiniciar el programa",
-                d: "Para cambiar la velocidad del procesador"
+            {
+                question: "¿Qué tipo de dato se usa para almacenar valores verdadero/falso en Arduino?",
+                options: [
+                    "int",
+                    "float",
+                    "char",
+                    "bool"
+                ],
+                correct: 3
             },
-            q9: {
-                a: "Es muy caro y exclusivo",
-                b: "Solo pueden usarlo ingenieros especializados",
-                c: "Es económico y de código abierto",
-                d: "No tiene documentación disponible"
+            {
+                question: "¿Cuál es la función de los actuadores en un robot?",
+                options: [
+                    "Percibir el entorno",
+                    "Convertir señales eléctricas en movimiento físico o acción",
+                    "Procesar información",
+                    "Almacenar datos"
+                ],
+                correct: 1
             },
-            q10: {
-                a: "Arduino Diecimila",
-                b: "Arduino Due",
-                c: "Arduino Uno",
-                d: "Arduino Yún"
+            {
+                question: "¿Qué significa PWM en Arduino?",
+                options: [
+                    "Power Width Modulation",
+                    "Pulse Width Modulation",
+                    "Program Width Management",
+                    "Pin Width Mode"
+                ],
+                correct: 1
             },
-            q11: {
-                a: "4800 baudios",
-                b: "9600 baudios",
-                c: "19200 baudios",
-                d: "115200 baudios"
+            {
+                question: "¿Cuál fue el modelo de Arduino más icónico lanzado en 2010?",
+                options: [
+                    "Arduino Diecimila",
+                    "Arduino Due",
+                    "Arduino Uno",
+                    "Arduino Mega"
+                ],
+                correct: 2
             },
-            q12: {
-                a: "Solo ingeniería mecánica",
-                b: "Ingeniería mecánica, eléctrica, ciencias de la computación e IA",
-                c: "Solo programación",
-                d: "Solo electrónica"
+            {
+                question: "¿Qué estructura de control se usa cuando conoces exactamente cuántas repeticiones necesitas?",
+                options: [
+                    "while",
+                    "do-while",
+                    "for",
+                    "switch"
+                ],
+                correct: 2
             },
-            q13: {
-                a: "No hay diferencia",
-                b: "print() escribe sin salto de línea, println() escribe y pasa a la siguiente línea",
-                c: "println() es más rápido",
-                d: "print() solo funciona con números"
+            {
+                question: "¿Cuál es el rango de valores que devuelve analogRead() en Arduino?",
+                options: [
+                    "0 a 255",
+                    "0 a 1023",
+                    "0 a 512",
+                    "0 a 100"
+                ],
+                correct: 1
             },
-            q14: {
-                a: "Roma",
-                b: "Milán",
-                c: "Ivrea",
-                d: "Florencia"
+            {
+                question: "¿Qué disciplinas combina la robótica según el documento?",
+                options: [
+                    "Solo ingeniería mecánica y eléctrica",
+                    "Ingeniería mecánica, eléctrica, ciencias de la computación e inteligencia artificial",
+                    "Solo programación y electrónica",
+                    "Matemáticas y física únicamente"
+                ],
+                correct: 1
             },
-            q15: {
-                a: "Es muy rápida",
-                b: "Durante un delay, Arduino no puede hacer otra cosa",
-                c: "Solo funciona con LEDs",
-                d: "Consume mucha memoria"
+            {
+                question: "¿Cuál es una limitación importante de la función delay() en Arduino?",
+                options: [
+                    "Consume mucha memoria",
+                    "Es muy lenta",
+                    "Durante un delay, Arduino no puede hacer otra cosa",
+                    "Solo funciona con números pares"
+                ],
+                correct: 2
+            },
+            {
+                question: "¿Qué función se usa para configurar un pin como entrada o salida?",
+                options: [
+                    "digitalWrite()",
+                    "digitalRead()",
+                    "pinMode()",
+                    "analogWrite()"
+                ],
+                correct: 2
+            },
+            {
+                question: "¿Cuál es una de las principales ventajas de Arduino?",
+                options: [
+                    "Es el más potente del mercado",
+                    "Solo lo pueden usar ingenieros",
+                    "Es de código abierto y económico",
+                    "No necesita programación"
+                ],
+                correct: 2
+            },
+            {
+                question: "¿Qué palabra clave es importante incluir en cada caso de una estructura switch?",
+                options: [
+                    "continue",
+                    "break",
+                    "return",
+                    "exit"
+                ],
+                correct: 1
+            },
+            {
+                question: "¿Cuál es la diferencia entre print() y println() en Arduino?",
+                options: [
+                    "No hay diferencia",
+                    "print() es más rápido",
+                    "println() escribe y pasa a la siguiente línea",
+                    "print() solo funciona con números"
+                ],
+                correct: 2
+            },
+            {
+                question: "¿Qué microcontrolador utiliza el Arduino Uno clásico?",
+                options: [
+                    "ATmega256",
+                    "ATmega328",
+                    "ATmega168",
+                    "ATmega32"
+                ],
+                correct: 1
+            },
+            {
+                question: "¿Cuál es el propósito principal de la función setup() en Arduino?",
+                options: [
+                    "Ejecutar el programa principal",
+                    "Repetir código continuamente",
+                    "Configurar inicializaciones que solo se ejecutan una vez",
+                    "Terminar el programa"
+                ],
+                correct: 2
+            },
+            {
+                question: "¿Qué valores puede tener una salida digital en Arduino?",
+                options: [
+                    "0 a 1023",
+                    "0 a 255",
+                    "HIGH y LOW",
+                    "Cualquier número decimal"
+                ],
+                correct: 2
+            },
+            {
+                question: "¿Cuál fue el objetivo inicial de Arduino cuando se creó?",
+                options: [
+                    "Competir con las computadoras",
+                    "Crear una herramienta accesible para estudiantes de diseño interactivo",
+                    "Desarrollar robots industriales",
+                    "Reemplazar las computadoras personales"
+                ],
+                correct: 1
+            },
+            {
+                question: "¿Qué tipo de bucle garantiza al menos una ejecución?",
+                options: [
+                    "for",
+                    "while",
+                    "do-while",
+                    "loop"
+                ],
+                correct: 2
+            },
+            {
+                question: "¿De dónde proviene el nombre 'Arduino'?",
+                options: [
+                    "Del apellido de uno de los fundadores",
+                    "De un término técnico en italiano",
+                    "De un bar en Ivrea donde se reunían los fundadores",
+                    "Es un acrónimo"
+                ],
+                correct: 2
             }
-        };
+        ];
+
+        let currentQuestions = [];
+        let userAnswers = [];
+
+        function shuffleArray(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        function generateExam() {
+            currentQuestions = shuffleArray(questionBank).slice(0, 15);
+            userAnswers = new Array(15).fill(-1);
+            
+            const container = document.getElementById('questionsContainer');
+            container.innerHTML = '';
+
+            currentQuestions.forEach((q, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                questionDiv.innerHTML = `
+                    <h3>Pregunta ${index + 1}: ${q.question}</h3>
+                    <div class="options">
+                        ${q.options.map((option, optIndex) => `
+                            <div class="option">
+                                <input type="radio" id="q${index}_${optIndex}" name="question${index}" value="${optIndex}">
+                                <label for="q${index}_${optIndex}">${option}</label>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                container.appendChild(questionDiv);
+            });
+
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('examForm').style.display = 'block';
+        }
+
+        function calculateScore() {
+            const formData = new FormData(document.getElementById('examForm'));
+            let correctAnswers = 0;
+            const wrongAnswers = [];
+
+            currentQuestions.forEach((q, index) => {
+                const userAnswer = parseInt(formData.get(`question${index}`));
+                userAnswers[index] = userAnswer;
+
+                if (userAnswer === q.correct) {
+                    correctAnswers++;
+                } else {
+                    wrongAnswers.push({
+                        questionIndex: index,
+                        question: q.question,
+                        userAnswer: userAnswer >= 0 ? q.options[userAnswer] : 'Sin respuesta',
+                        correctAnswer: q.options[q.correct]
+                    });
+                }
+            });
+
+            return { correctAnswers, wrongAnswers };
+        }
+
+        function displayResults(correctAnswers, wrongAnswers) {
+            const resultsDiv = document.getElementById('results');
+            const scoreDiv = document.getElementById('scoreDisplay');
+            const wrongDiv = document.getElementById('wrongAnswers');
+
+            const percentage = (correctAnswers / 15) * 100;
+            let scoreClass = 'poor';
+            let emoji = '😞';
+
+            if (percentage >= 80) {
+                scoreClass = 'good';
+                emoji = '🎉';
+            } else if (percentage >= 60) {
+                scoreClass = 'average';
+                emoji = '😊';
+            }
+
+            scoreDiv.className = `score ${scoreClass}`;
+            scoreDiv.innerHTML = `
+                <div>${emoji}</div>
+                <div>Calificación: ${correctAnswers}/15</div>
+                <div>Porcentaje: ${percentage.toFixed(1)}%</div>
+            `;
+
+            if (wrongAnswers.length > 0) {
+                wrongDiv.innerHTML = `
+                    <h3>❌ Respuestas Incorrectas (${wrongAnswers.length}):</h3>
+                    ${wrongAnswers.map(wrong => `
+                        <div class="wrong-answer">
+                            <h4>Pregunta ${wrong.questionIndex + 1}: ${wrong.question}</h4>
+                            <p><strong>Tu respuesta:</strong> ${wrong.userAnswer}</p>
+                            <p class="correct-answer"><strong>Respuesta correcta:</strong> ${wrong.correctAnswer}</p>
+                        </div>
+                    `).join('')}
+                `;
+            } else {
+                wrongDiv.innerHTML = '<h3>🎊 ¡Perfecto! Todas las respuestas fueron correctas</h3>';
+            }
+
+            document.getElementById('examForm').style.display = 'none';
+            resultsDiv.style.display = 'block';
+        }
 
         document.getElementById('examForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            let correctCount = 0;
-            let incorrectCount = 0;
-            const totalQuestions = 15;
-            const wrongAnswers = [];
-            
-            // Verificar cada respuesta
-            for (let i = 1; i <= totalQuestions; i++) {
-                const questionName = `q${i}`;
-                const selectedAnswer = document.querySelector(`input[name="${questionName}"]:checked`);
-                
-                if (selectedAnswer && selectedAnswer.value === correctAnswers[questionName]) {
-                    correctCount++;
-                } else {
-                    incorrectCount++;
-                    // Guardar información de respuesta incorrecta
-                    wrongAnswers.push({
-                        question: questionName,
-                        questionText: questionTexts[questionName],
-                        selectedAnswer: selectedAnswer ? selectedAnswer.value : null,
-                        correctAnswer: correctAnswers[questionName]
-                    });
-                }
-            }
-            
-            // Calcular porcentaje
-            const percentage = Math.round((correctCount / totalQuestions) * 100);
-            
-            // Mostrar resultados
-            document.getElementById('correctCount').textContent = correctCount;
-            document.getElementById('incorrectCount').textContent = incorrectCount;
-            document.getElementById('percentage').textContent = percentage + '%';
-            
-            // Mensaje según el resultado
-            let message = '';
-            if (percentage >= 90) {
-                message = '¡Excelente! Dominas muy bien los conceptos de robótica y Arduino. 🌟';
-            } else if (percentage >= 70) {
-                message = '¡Muy bien! Tienes un buen conocimiento de los temas. 👍';
-            } else if (percentage >= 50) {
-                message = 'Bien, pero puedes mejorar. Te recomiendo repasar algunos conceptos. 📚';
-            } else {
-                message = 'Necesitas estudiar más. ¡No te desanimes, sigue practicando! 💪';
-            }
-            
-            document.getElementById('message').textContent = message;
-            
-            // Mostrar respuestas incorrectas
-            const wrongAnswersList = document.getElementById('wrongAnswersList');
-            const wrongAnswersDiv = document.getElementById('wrongAnswers');
-            
-            if (wrongAnswers.length > 0) {
-                wrongAnswersDiv.style.display = 'block';
-                wrongAnswersList.innerHTML = '';
-                
-                wrongAnswers.forEach(wrong => {
-                    const wrongItem = document.createElement('div');
-                    wrongItem.className = 'wrong-item';
-                    
-                    const yourAnswerText = wrong.selectedAnswer ? 
-                        answerOptions[wrong.question][wrong.selectedAnswer] : 
-                        'No respondiste';
-                    
-                    const correctAnswerText = answerOptions[wrong.question][wrong.correctAnswer];
-                    
-                    wrongItem.innerHTML = `
-                        <div class="question-text">${wrong.questionText}</div>
-                        <div class="answer-info">
-                            <div class="your-answer">Tu respuesta: ${yourAnswerText}</div>
-                            <div class="correct-answer">Respuesta correcta: ${correctAnswerText}</div>
-                        </div>
-                    `;
-                    
-                    wrongAnswersList.appendChild(wrongItem);
-                });
-            } else {
-                wrongAnswersDiv.style.display = 'none';
-            }
-            
-            // Ocultar formulario y mostrar resultados
-            document.getElementById('examForm').style.display = 'none';
-            document.getElementById('results').style.display = 'block';
-            
-            // Scroll to results
-            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+            const { correctAnswers, wrongAnswers } = calculateScore();
+            displayResults(correctAnswers, wrongAnswers);
         });
-        
-        function retryExam() {
-            // Limpiar todas las respuestas
-            const radios = document.querySelectorAll('input[type="radio"]');
-            radios.forEach(radio => radio.checked = false);
-            
-            // Mostrar formulario y ocultar resultados
-            document.getElementById('examForm').style.display = 'block';
-            document.getElementById('results').style.display = 'none';
-            
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+
+        document.getElementById('retryBtn').addEventListener('click', function() {
+            generateExam();
+        });
+
+        // Generar el primer examen
+        generateExam();
     </script>
 </body>
 </html>
